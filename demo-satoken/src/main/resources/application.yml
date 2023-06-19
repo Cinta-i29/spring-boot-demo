@@ -1,0 +1,71 @@
+############## spring mysql 配置 ##############
+server:
+  # 端口
+  port: 8081
+spring:
+  application:
+    name: Sa-Token-Demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo_satoken?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  #  redis:
+  #    host: localhost
+  #    port: 6379
+  #    lettuce:
+  #      pool:
+  #        max-active: 10
+  #        max-idle: 10
+  #        min-idle: 1
+  #        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.howe.entity # 别名扫描包
+#  global-config:
+#    db-config:
+#      column-underline: false  # 取消下划线转换
+#      column-alias: true       # 开启驼峰命名转换
+logging:
+  level:
+    com.howe: debug
+
+
+############## knife4j 接口文档配置 ##############
+springdoc:
+  swagger-ui:
+    #指定Swagger UI的自定义前端请求路径
+    path: /swagger
+    operations-sorter: alpha
+  api-docs:
+    #指定Swagger API文档的访问路径
+    path: /v3/api-docs
+  group-configs:
+    #配置了一个名为 default的组
+    - group: 'default'
+      paths-to-match: '/**'                   #指定了要包含在该组中的URL路径的通配符规则
+      packages-to-scan: com.howe.controller   #指定了要扫描的控制器所在的包
+  default-flat-param-object: true             #默认情况下是否将嵌套的请求参数对象展平
+
+
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: token
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: true
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+  # 是否在登录后将 Token 写入到响应头
+  is-write-header: true
+
+
