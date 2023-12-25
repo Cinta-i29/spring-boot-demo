@@ -9,6 +9,9 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/webSocket/pom.xml" />
+        <option value="$PROJECT_DIR$/es-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/redis-demo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
