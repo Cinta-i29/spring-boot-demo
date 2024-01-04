@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="es-demo" />
         <module name="satoken-demo" />
+        <module name="rocketMQ-demo" />
         <module name="demo" />
       </profile>
     </annotationProcessing>
@@ -35,6 +36,7 @@
       <module name="SpringDataRedis-Demo1" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="redis-demo" options="" />
+      <module name="rocketMQ-demo" options="" />
       <module name="webSocket" options="-parameters" />
     </option>
   </component>

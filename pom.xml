@@ -10,6 +10,7 @@
     <modules>
         <module>satoken-demo</module>
         <module>es-demo</module>
+        <module>rocketMQ-demo</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -33,6 +34,7 @@
         <elastic.version>8.9.1</elastic.version>
         <jackson.version>2.12.3</jackson.version>
         <junit.version>RELEASE</junit.version>
+        <rocketmq.version>5.0.5</rocketmq.version>
     </properties>
 
 
@@ -83,6 +85,12 @@
                 <artifactId>junit-jupiter</artifactId>
                 <version>${junit.version}</version>
                 <scope>compile</scope>
+            </dependency>
+            <!--RocketMQ 消息队列-->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client-java</artifactId>
+                <version>${rocketmq.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
